@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  web:
+    ports:
+      - "8001:8001"
+    container_name: beam_viewer_20240418
+    image: beam_viewer

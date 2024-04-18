@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Welcome to beam_viewer ver0.0</title>
+</head>
+
+<body style="background-color:#f3f8ff;">
+<label class="list-group-item d-flex flex-wrap gap-2" name="nodeCheckbox">
+<table class="table table-striped table-bordered"><thead><tr><td>CGA-2                         <input type="radio" name="CGA-2                         " value="left" class="beamName"><input type="radio" name="CGA-2                         " value="right" class="beamName"></td><td>CGA-3                         <input type="radio" name="CGA-3                         " value="left" class="beamName"><input type="radio" name="CGA-3                         " value="right" class="beamName"></td><td>CGA-4                         <input type="radio" name="CGA-4                         " value="left" class="beamName"><input type="radio" name="CGA-4                         " value="right" class="beamName"></td><td>CB5-2                         <input type="radio" name="CB5-2                         " value="left" class="beamName"><input type="radio" name="CB5-2                         " value="right" class="beamName"></td><td>CGA-1                         <input type="radio" name="CGA-1                         " value="left" class="beamName"><input type="radio" name="CGA-1                         " value="right" class="beamName"></td><td>CB5-3                         <input type="radio" name="CB5-3                         " value="left" class="beamName"><input type="radio" name="CB5-3                         " value="right" class="beamName"></td></tr></thead><tbody><tr class="align-top"><td class="align-top"><label name="(R1F)CGA-2          ">(R1F)CGA-2          </label><input type="radio" name="(R1F)CGA-2          " value="left" class="CGA-2                         "><input type="radio" name="(R1F)CGA-2          " value="right" class="CGA-2                         "><br><label name="(13F-12F)CGA-2      ">(13F-12F)CGA-2      </label><input type="radio" name="(13F-12F)CGA-2      " value="left" class="CGA-2                         "><input type="radio" name="(13F-12F)CGA-2      " value="right" class="CGA-2                         "><br><label name="(11F-10F)CGA-2      ">(11F-10F)CGA-2      </label><input type="radio" name="(11F-10F)CGA-2      " value="left" class="CGA-2                         "><input type="radio" name="(11F-10F)CGA-2      " value="right" class="CGA-2                         "><br></td><td class="align-top"><label name="(13F-12F)CGA-3      ">(13F-12F)CGA-3      </label><input type="radio" name="(13F-12F)CGA-3      " value="left" class="CGA-3                         "><input type="radio" name="(13F-12F)CGA-3      " value="right" class="CGA-3                         "><br><label name="(11F-10F)CGA-3      ">(11F-10F)CGA-3      </label><input type="radio" name="(11F-10F)CGA-3      " value="left" class="CGA-3                         "><input type="radio" name="(11F-10F)CGA-3      " value="right" class="CGA-3                         "><br><label name="(9F)CGA-3           ">(9F)CGA-3           </label><input type="radio" name="(9F)CGA-3           " value="left" class="CGA-3                         "><input type="radio" name="(9F)CGA-3           " value="right" class="CGA-3                         "><br></td><td class="align-top"><label name="(13F-12F)CGA-4      ">(13F-12F)CGA-4      </label><input type="radio" name="(13F-12F)CGA-4      " value="left" class="CGA-4                         "><input type="radio" name="(13F-12F)CGA-4      " value="right" class="CGA-4                         "><br><label name="(8F)CGA-4           ">(8F)CGA-4           </label><input type="radio" name="(8F)CGA-4           " value="left" class="CGA-4                         "><input type="radio" name="(8F)CGA-4           " value="right" class="CGA-4                         "><br><label name="(6F)CGA-4           ">(6F)CGA-4           </label><input type="radio" name="(6F)CGA-4           " value="left" class="CGA-4                         "><input type="radio" name="(6F)CGA-4           " value="right" class="CGA-4                         "><br></td><td class="align-top"><label name="(13F-12F)CB5-2      ">(13F-12F)CB5-2      </label><input type="radio" name="(13F-12F)CB5-2      " value="left" class="CB5-2                         "><input type="radio" name="(13F-12F)CB5-2      " value="right" class="CB5-2                         "><br></td><td class="align-top"><label name="(11F-10F)CGA-1      ">(11F-10F)CGA-1      </label><input type="radio" name="(11F-10F)CGA-1      " value="left" class="CGA-1                         "><input type="radio" name="(11F-10F)CGA-1      " value="right" class="CGA-1                         "><br><label name="(7F)CGA-1           ">(7F)CGA-1           </label><input type="radio" name="(7F)CGA-1           " value="left" class="CGA-1                         "><input type="radio" name="(7F)CGA-1           " value="right" class="CGA-1                         "><br></td><td class="align-top"><label name="(9F)CB5-3           ">(9F)CB5-3           </label><input type="radio" name="(9F)CB5-3           " value="left" class="CB5-3                         "><input type="radio" name="(9F)CB5-3           " value="right" class="CB5-3                         "><br></td></tr></tbody></table>
+</label>
+<button onclick="addlistener()">HI</button>
+<script type="text/javascript">
+    function addlistener() {
+    var allBeamname = document.getElementsByClassName("beamName");
+    for(var i = 0; i < allBeamname.length; i++)
+    {
+        allBeamname[i].addEventListener('click',function(e){
+            changeState(this);
+
+        })
+    }
+  }
+  function changeState(a){
+    var allBeam = document.getElementsByClassName(a.name);
+    for (var ii = 0; ii < allBeam.length; ii++)
+        if(allBeam[ii].value==a.value)
+        allBeam[ii].checked=true;
+}
+//   addlistener();
+</script>
+</body>
+</html>

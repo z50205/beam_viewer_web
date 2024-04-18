@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Select the revise GBN</h1>
+<form action="" method="post" enctype="multipart/form-data">
+    <p>
+        {{ form.hidden_tag()}}
+        <input type="file" name="filename" accept=".GBN" id="files" multiple /><br>
+        {{ form.case_id.label }}<br>
+        {{ form.case_id() }}
+    </p>
+    <!-- <button onclick="shareOntwitter()">Click</button> -->
+    <!-- <div class="fb-share-button" data-href="https://bizara.link" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbizara.link%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">分享</a></div> -->
+    <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="checkbox" name="0">
+        <span>
+            調整三排鋼筋
+            <small class="d-block text-body-secondary">以間距至少1.0db、上下排平均分配為原則更改鋼筋</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="checkbox" name="1">
+        <span>
+            中間段箍筋間距調整
+            <small class="d-block text-body-secondary">將中間段雙箍調整為單箍，單箍間距至少10cm</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="checkbox" name="2">
+        <span>
+            端部主筋調整為至少4根主筋
+            <small class="d-block text-body-secondary">梁寬大於等於65cm者且為雙箍筋於圍束區更改為4支主筋</small>
+        </span>
+    </label>
+    <label class="list-group-item d-flex gap-2">
+        <input class="form-check-input flex-shrink-0" type="checkbox" name="3">
+        <span>
+            懸挑段調整主筋至遠端
+            <small class="d-block text-body-secondary">調整懸挑端標示，左圓圈代表左端懸挑；右圓圈代表右端懸挑</small>
+        </span>
+    </label>
+    <div class="list-group-item d-flex flex-wrap gap-2" name="nodeCheckbox">
+    </div>
+    <p class="list-group-item d-flex gap-2" name="Checkhtml">
+    </p>
+    {{ form.submit() }}
+</form>
+<script type="text/javascript" src="{{ url_for('static', filename = 'app.js') }}"></script>
+{% include 'record.html' %}
+<!-- <script>
+    function handleFileSelect(evt) {
+        // Loop through the FileList and render image files as thumbnails.
+        var element = document.getElementById("list");
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+        }
+        for (const file of evt.target.files) {
+            // Render thumbnail.
+            const span = document.createElement('span')
+            const src = URL.createObjectURL(file)
+            span.innerHTML =
+                `<img style="height: 75px; border: 1px solid #000; margin: 5px"` +
+                `src="${src}" title="${escape(file.name)}">`
+            document.getElementById("list").insertBefore(span, null)
+        }
+    }
+
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+</script> -->
+{% endblock %}
